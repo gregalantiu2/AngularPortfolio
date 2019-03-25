@@ -1,0 +1,18 @@
+<div>
+    <h1>Projects</h1>
+    <br>
+    <div *ngFor="let project of service.list; let i = index">
+        <div class="projectcontainer" (click)="toggleShow(i)">
+            <div class="projectheader">
+            <h2><b>Project Title: </b>{{project.projectTitle}}</h2>
+            <h2><b>Tech Used: </b>{{project.techUsed}}</h2>
+            <br>
+        </div>
+        <div class="projectdescription" *ngIf="show === i">
+            <p>{{project.description}}</p>
+        </div>
+        </div>
+        <br>
+    </div>
+</div>   
+

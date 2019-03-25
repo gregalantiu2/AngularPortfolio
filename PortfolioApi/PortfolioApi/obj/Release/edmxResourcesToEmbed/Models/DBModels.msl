@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PortfolioDBModelStoreContainer" CdmEntityContainer="DBModels">
+    <EntitySetMapping Name="dogs">
+      <EntityTypeMapping TypeName="PortfolioDBModel.dog">
+        <MappingFragment StoreEntitySet="dogs">
+          <ScalarProperty Name="dogTitle" ColumnName="dogTitle" />
+          <ScalarProperty Name="dogsID" ColumnName="dogsID" />
+          <ScalarProperty Name="dogURL" ColumnName="dogURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

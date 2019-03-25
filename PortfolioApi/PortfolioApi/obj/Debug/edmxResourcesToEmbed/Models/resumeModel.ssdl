@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="resumeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="resume">
+    <Key>
+      <PropertyRef Name="resumeID" />
+    </Key>
+    <Property Name="resumeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="company" Type="varchar" MaxLength="100" />
+    <Property Name="role" Type="varchar" MaxLength="100" />
+    <Property Name="startDT" Type="varchar" MaxLength="50" />
+    <Property Name="endDT" Type="varchar" MaxLength="50" />
+    <Property Name="sort" Type="int" />
+    <Property Name="description" Type="varchar(max)" />
+  </EntityType>
+  <Function Name="UpdateSortResume" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Sort" Type="int" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="resumeDBModelStoreContainer">
+    <EntitySet Name="resume" EntityType="Self.resume" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

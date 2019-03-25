@@ -1,0 +1,10 @@
+<ngb-carousel>
+      <div *ngFor="let dog of service.list">
+          <ng-template ngbSlide>
+              <img id="carouselpic" src={{dog.dogURL}}/>
+              <div class="carousel-caption">
+                <h3>{{dog.dogTitle}}</h3>
+              </div>
+            </ng-template>
+      </div>  
+</ngb-carousel>

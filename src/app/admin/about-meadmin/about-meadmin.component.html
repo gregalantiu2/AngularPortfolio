@@ -1,0 +1,10 @@
+<h1>About Me</h1>
+<hr>
+    <form #form="ngForm" autocomplete="off" (submit)="OnSubmit(form)">
+      <input type="hidden" name="aboutMeID" #aboutMeID="ngModel" [(ngModel)]="service.formData.aboutMeID" class="form-control">
+      <div class="form-group">
+        <label>About Me Text:</label>
+        <textarea id="textboxID" name="aboutMeText" #aboutMeText="ngModel" [(ngModel)]="service.formData.aboutMeText" class="form-control"></textarea>
+        <button type="submit" class="btn btn-dark">Submit</button>
+      </div>
+    </form>

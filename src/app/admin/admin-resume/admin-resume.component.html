@@ -1,0 +1,36 @@
+<h1>Resume</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-5">
+      <form #form="ngForm" autocomplete="off" (submit)="OnSubmit(form)">
+        <input type="hidden" name="resumeID" #resumeID="ngModel" [(ngModel)]="service.formData.resumeID" class="form-control">
+        <div class="form-group">
+          <label>Sort:</label>
+          <input name="sort" #sort="ngModel" [(ngModel)]="service.formData.sort" class="form-control">
+          <label>Company:</label>
+          <input name="company" #company="ngModel" [(ngModel)]="service.formData.company" class="form-control">
+          <label>Role:</label>
+          <input name="role" #role="ngModel" [(ngModel)]="service.formData.role" class="form-control">
+          <label>StartDT:</label>
+          <input name="startDT" #dogURL="ngModel" [(ngModel)]="service.formData.startDT" class="form-control">
+          <label>EndDT:</label>
+          <input name="endDT" #endDT="ngModel" [(ngModel)]="service.formData.endDT" class="form-control">
+          <label>Details::</label>
+          <input name="description" #description="ngModel" [(ngModel)]="service.formData.description" class="form-control">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-dark">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-7">
+      <table class="table table-hover">
+        <tr *ngFor="let resume of service.list">
+          <td (click)="populateForm(resume)">{{resume.company}}</td>
+          <td>{{resume.role}}</td>
+          <td>{{resume.sort}}</td>
+          <td><button class="btn btn-sm btn-outline-danger" (click)="deleteRecord(resume.resumeID)">Delete</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>

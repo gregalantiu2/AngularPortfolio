@@ -1,0 +1,39 @@
+  <div class="jumbotron">
+    <h1>Dog Gallery</h1>
+    <hr>
+    <div class="row">
+      <div class="col-md-5">
+        <form #form="ngForm" autocomplete="off" (submit)="OnSubmit(form)">
+          <input type="hidden" name="dogsID" #dogsID="ngModel" [(ngModel)]="service.formData.dogsID" class="form-control">
+          <div class="form-group">
+            <label>Picture Title:</label>
+            <input name="dogTitle" #dogTitle="ngModel" [(ngModel)]="service.formData.dogTitle" class="form-control">
+            <label>Picture URL:</label>
+            <input name="dogURL" #dogURL="ngModel" [(ngModel)]="service.formData.dogURL" class="form-control">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-dark">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-7">
+        <table class="table table-hover">
+          <tr *ngFor="let dog of service.list">
+            <td (click)="populateForm(dog)">{{dog.dogTitle}}</td>
+            <td>{{dog.dogURL}}</td>
+            <td><button class="btn btn-sm btn-outline-danger" (click)="deleteRecord(dog.dogsID)">Delete</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="jumbotron">
+      <app-about-meadmin></app-about-meadmin>
+  </div>
+  <div class="jumbotron">
+      <app-admin-resume></app-admin-resume>
+  </div>
+  <div class="jumbotron">
+        <app-admin-project></app-admin-project>
+  </div>
+

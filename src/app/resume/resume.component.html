@@ -1,0 +1,21 @@
+<div>
+  <h1>Experience</h1>
+  <br>
+  <div *ngFor="let resume of service.list; let i = index">
+    <div class="container" (click)="toggleShow(i)">
+    <div class="topresume row">
+          <div class="col-sm-6" id="company"><h2>{{resume.company}}</h2></div>
+          <div class="col-sm-6 dates"><h2>{{resume.startDT}} - {{resume.endDT}}</h2></div>
+          <div class="col-sm-6"><h3>{{resume.role}}</h3></div>
+    </div>
+    <div class="bottomresume" *ngIf="show === i">
+        <ul>
+          <div *ngFor="let bullet of service.list[i].bullets">
+          <li><p>{{bullet}}</p></li>
+          </div>
+        </ul>
+    </div>
+  </div>
+  <br>
+  </div>
+</div>

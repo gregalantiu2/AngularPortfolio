@@ -1,0 +1,24 @@
+*:focus {
+    outline: 0;
+}
+
+#carouselpic{
+    border-radius: 400px;
+    float: left;
+    border: solid;
+    border-color: darksalmon;
+    border-width: 24px;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 669px) {
+    #carouselpic{
+        margin-left: 0px;
+        border: solid;
+        border-color: darksalmon;
+        border-width: 12px;
+    }
+  }

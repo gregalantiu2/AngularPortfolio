@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="resumeDBModelStoreContainer" CdmEntityContainer="resumeModel">
+    <EntitySetMapping Name="resumes">
+      <EntityTypeMapping TypeName="resumeDBModel.resume">
+        <MappingFragment StoreEntitySet="resume">
+          <ScalarProperty Name="resumeID" ColumnName="resumeID" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="startDT" ColumnName="startDT" />
+          <ScalarProperty Name="endDT" ColumnName="endDT" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="UpdateSortResume" FunctionName="resumeDBModel.Store.UpdateSortResume" />
+  </EntityContainerMapping>
+</Mapping>
